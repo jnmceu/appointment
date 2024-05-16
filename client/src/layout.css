@@ -15,6 +15,13 @@
   color: rgb(0, 0, 0);
   margin-top: 12px;
   margin-left: 5px;
+  text-align: center;
+}
+.sidebar-header h3{
+  color: rgb(0, 0, 0);
+  margin-top: 12px;
+  margin-left: 5px;
+  text-align: center;
 }
 .sidebar-header p{
   color: black;
@@ -44,6 +51,7 @@
   box-shadow: 0 0 2px gray;
   height: 82vh;
   width: 100%;
+  padding: 15px;
 }
 
 .menu{

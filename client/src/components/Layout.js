@@ -73,7 +73,8 @@ function Layout({ children }) {
                 margin: "20px auto",
               }}
             />
-
+            <hr />
+            <hr />
             <div className="menu">
               {menuToBeRendered.map((menu) => {
                 const isActive = location.pathname === menu.path;
