@@ -2,12 +2,13 @@ import React, { useState } from "react";
 import "../layout.css";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
-import ceuLogo from '../pages/image/ceulogo.png';
+import ceuLogo from "../pages/image/ceulogo.png";
+import { Badge } from 'antd';
 
 function Layout({ children }) {
   const [collapsed, setCollapsed] = useState(false);
   const { user } = useSelector((state) => state.user);
-  console.log(user)
+  console.log(user);
   const navigate = useNavigate();
   const location = useLocation();
   const userMenu = () => [
@@ -63,7 +64,7 @@ function Layout({ children }) {
       <div className="d-flex layout">
         <div className="sidebar">
           <div className="sidebar-header">
-          <img
+            <img
               src={ceuLogo} // Updated the image import path
               alt="CEU Logo"
               style={{
@@ -89,12 +90,15 @@ function Layout({ children }) {
                   </div>
                 );
               })}
-              <div className={`d-flex menu-item`} onClick={()=>{
-                localStorage.clear()
-                navigate('/login')
-              }}>
-                <i className='ri-logout-circle-line'></i>
-                {!collapsed && <Link to='/login'>Logout</Link>}
+              <div
+                className={`d-flex menu-item`}
+                onClick={() => {
+                  localStorage.clear();
+                  navigate("/login");
+                }}
+              >
+                <i className="ri-logout-circle-line"></i>
+                {!collapsed && <Link to="/login">Logout</Link>}
               </div>
             </div>
           </div>
@@ -114,8 +118,11 @@ function Layout({ children }) {
               ></i>
             )}
             <div className="d-flex align-items-center px-4">
+              <Badge count={user?.unseenNotifications.length}>
               <i className="ri-notification-line header-action-icon px-3"></i>
-              <Link className="anchor" to="/profile" style={{ color: "black" }}>
+              </Badge>
+              
+              <Link className="anchor mx-3" to="/profile" style={{ color: "black" }}>
                 {user?.name}
               </Link>
             </div>
