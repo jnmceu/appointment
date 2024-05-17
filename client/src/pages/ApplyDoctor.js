@@ -1,13 +1,19 @@
-import { Form, Col, Row, Input, TimePicker } from "antd";
+import { Form, Col, Row, Input, TimePicker, Button } from "antd";
 import React from "react";
 import Layout from "../components/Layout";
 
 function ApplyDoctor() {
+
+  const onFinish = values => {
+    console.log('Success:', values)
+  }
+
   return (
     <Layout>
       <h1 className="page-title">Apply a Doctor</h1>
       <hr />
-      <Form layout="vertical">
+
+      <Form layout="vertical" onFinish={onFinish}>
         <h1 className="card-title mt-3">Personal Information</h1>
         <Row gutter={20}>
           <Col span={8} xs={24} sm={24} lg={8}>
@@ -31,10 +37,11 @@ function ApplyDoctor() {
             </Form.Item>
           </Col>
     
-        </Row>
+        </Row>  
       <hr />
       <h1 className="card-title mt-3">Schedule</h1>
       <Row gutter={20}>
+
           <Col span={8} xs={24} sm={24} lg={8}>
             <Form.Item label="Day" name="day" rules={[{ required: true }]}>
               <Input placeholder="Monday, Tuesday, etc..." />
@@ -47,6 +54,10 @@ function ApplyDoctor() {
           </Col>
     
         </Row>
+
+      <div className="d-flex justify-content">
+        <Button className="primary-button" htmlType='submit'>Submit</Button>
+      </div>
       </Form>
     </Layout>
   );

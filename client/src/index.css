@@ -21,7 +21,14 @@ label{
 .ant-form-item{
   margin: 10px 0 !important;
 }
-
+.ant-picker-input input{
+  border: none !important;
+}
+.ant-picker{
+  border-radius: 2px !important;
+  border: 1px solid black !important;
+  height: 40px !important;
+}
 /* common styling */
 .spinner-parent{
   display: flex;
@@ -62,6 +69,8 @@ label{
   width: 100%;
   font-size: 16px !important;
   border-radius: 0;
+  width: max-content !important;
+  margin-top: 20px;
 }
 .link-button{
   font-size: 16px;
