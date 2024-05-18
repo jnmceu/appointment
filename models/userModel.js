@@ -23,7 +23,7 @@ const userSchema = new mongoose.Schema(
       default: false,
     },
     seenNotifications: {
-      type: Array,
+      type: Array, 
       default: [],
     },
     unseenNotifications: {
